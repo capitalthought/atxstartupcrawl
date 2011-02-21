@@ -1,0 +1,195 @@
+// header > div { background: rgba(0, 0, 0, 0.1) url('/images/grid.png') repeat-y top 10px !important; }
+// #wall { background: rgba(0, 0, 0, 0.1) url('/images/grid.png') repeat-y top 10px !important; }
+
+html { height: 100%; margin-bottom: 1px; overflow-y: scroll; }
+
+body { background: $sg-brick url('/images/bricks-brown.png') repeat top left; }
+
+a {
+  &:link, &:visited { color: $sg-link-color; text-decoration: none; }
+  &:active, &:hover { text-decoration: underline;  }
+}
+
+header {
+  @include outer-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
+  background: $sg-twilight url('/images/noise.png') repeat top left;
+  &:after {
+    background: darken($sg-brick, 5%) url('/images/noise.png') repeat top left;
+    background: url('/images/noise.png') repeat top left, -webkit-gradient(linear, 0 0, 0 100%, from(darken($sg-brick, 5%)), to(darken($sg-brick, 8%)));  
+    background: darken($sg-brick, 5%) url('/images/noise.png') repeat top left, -moz-linear-gradient(top, darken($sg-brick, 5%), darken($sg-brick, 8%));
+    
+    box-shadow:         inset 0 -1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    -moz-box-shadow:    inset 0 -1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    
+    content: "\0020";
+    display: block;
+    height: 40px;
+    width: 100%;
+  }
+  > div {
+    background-color: #f5eeeb;
+    background: -moz-radial-gradient(50% 50%, farthest-side, transparentize($sg-twilight-overlay,0.7), transparentize($sg-twilight-overlay,0.7), transparent);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(transparentize($sg-twilight-overlay,0.7)), color-stop(0.5, transparentize($sg-twilight-overlay,0.7)), to(transparent));
+    margin: 0 auto;
+    padding: ($sg-baseline * 3) 0 ($sg-baseline * 3) 0;
+    width: 720px;
+  }
+}
+
+#sign {
+  @include border-radius(10px);
+  box-shadow:         inset 0 0 4px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.3), inset 0 -1px 2px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow:    inset 0 0 4px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.3), inset 0 -1px 2px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.3), inset 0 -1px 2px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.25);
+
+  background: $sg-maroon;
+  margin: $sg-baseline 40px;
+  padding: 10px;
+  position: relative;
+  &:after { @include sign-light; bottom: 28px; }
+  &:before { @include sign-light; top: 28px; }
+  > .shim { @include sign-light; top: 48px; }
+}
+
+#panel {
+  @include border-radius(2px);
+  box-shadow:         inset 0 0 30px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 5px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow:    inset 0 0 30px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 5px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 5px rgba(0, 0, 0, 0.7);
+  
+  background: $sg-panel-color url('/images/noise.png') repeat top left;
+  position: relative;
+  z-index: 1;
+  &:after { @include panel-light; bottom: 18px; }
+  &:before { @include panel-light; top: 38px; }
+  .shim { @include panel-light; top: 18px; }
+  p { position: relative; z-index: 1; }
+}
+
+#wall {
+  padding-top: $sg-baseline * 2;
+  position: relative;
+  background: transparent url('/images/noise.png') repeat top center;
+  &:after {
+    background: transparent url('/images/spotlights.png') no-repeat top center;
+    content: "\0020";
+    display: block;
+    height: 200px;
+    opacity: 0.30;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+#rsvp {
+  margin-bottom: $sg-baseline * 2;
+  li {
+    display: inline-block;
+    &:first-of-type { @include rotate(-1deg); }
+    &:last-of-type { @include rotate(1deg); }
+  }
+  a {
+    box-shadow:         inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:    inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 10px rgba(0, 0, 0, 0.3);
+    
+    @include border-radius(15px);
+    @include neon-text($sg-neon-blue);
+    background: #080808;
+    background: url('/images/noise.png') repeat top left, -webkit-gradient(linear, 0 0, 0 100%, from(lighten($sg-button-color, 5%)), to($sg-button-color));
+    background: url('/images/noise.png') repeat top left, -moz-linear-gradient(top, lighten($sg-button-color, 5%), $sg-button-color);
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    height: $sg-baseline * 2;
+    line-height: $sg-baseline;
+    margin: 0 $sg-baseline;
+    padding: $sg-baseline / 2;
+    position: relative;
+    width: 160px;
+    // &:before { 
+    //   @include neon-text($sg-neon-pink); 
+    //   content: "NO"; 
+    //   display: block; 
+    //   font-size: 14px; 
+    //   position: absolute; 
+    //   top: 20px; 
+    //   text-align: center;
+    //   width: 100%;
+    // }
+    &:after { 
+      @include neon-text($sg-neon-green);
+      content: "VACANCY";
+      display: block;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    &:hover, &:active {
+      box-shadow:         inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 20px transparentize($sg-brick-overlay, 0.5);
+      -moz-box-shadow:    inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 20px transparentize($sg-brick-overlay, 0.5);
+      -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 20px transparentize($sg-brick-overlay, 0.5);
+      text-decoration: none;
+    }
+    .char1 { display: inline-block; margin-left: 5px; }
+  }
+}
+
+#details {
+  @include border-radius(3px);
+  background: url('/images/bricks-black.png') repeat top left;
+  padding: $sg-baseline 0;
+  position: relative;
+  
+  ::-moz-selection { -webkit-text-stroke: 0; background: rgba(255, 255, 255, 0.5); color: $sg-black; text-shadow: none; }
+  ::selection      { -webkit-text-stroke: 0; background: rgba(255, 255, 255, 0.5); color: $sg-black; text-shadow: none; }
+  
+  &:before {
+    content: "\0020";
+    background: url('/images/noise.png') repeat top left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+  }
+  &:after {
+    content: "\0020";
+    background: url('/images/texture.png') repeat top left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+  }
+  a {
+    &:link, &:visited { text-decoration: none; border-bottom: 1px solid #fff; }
+    &:active, &:hover { text-decoration: none; border-bottom: 2px solid #fff; }
+  }
+  p {
+    margin: $sg-baseline auto;
+    position: relative;
+    width: 580px;
+    z-index: 1;
+  }
+}
+
+footer {
+  margin: $sg-baseline 0;
+  padding: $sg-baseline 0;
+  position: relative;
+  a {
+    &:link, &:visited { text-decoration: none; border-bottom: 1px solid #fff; }
+    &:active, &:hover { text-decoration: none; border-bottom: 2px solid #fff; }
+  }
+  p {
+    margin: $sg-baseline auto;
+    position: relative;
+    width: 580px;
+    z-index: 1;
+  }
+}

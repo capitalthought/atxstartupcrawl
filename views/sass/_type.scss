@@ -1,0 +1,120 @@
+@mixin selection {
+  -webkit-text-stroke: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: $sg-white;
+  text-shadow: none;
+}
+
+::-moz-selection { @include selection; }
+::selection { @include selection; }
+
+body {
+  color: rgba(255, 255, 255, 0.9);
+  font: 600 14px "myriad-pro-condensed-1", "myriad-pro-condensed-2", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.125em;
+  line-height: $sg-baseline;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  &:link, &:visited { color: $sg-link-color; text-decoration: none; }
+  &:active, &:hover { text-decoration: underline;  }
+}
+
+header {
+  h1 { 
+    @include neon-text($sg-neon-blue);
+    font-size: 54px;
+    font-weight: 300;
+    line-height: ($sg-baseline * 3);
+    letter-spacing: 0.1em;
+    .word1 .char2 { margin-right: -2px; }
+    .word2 .char3 { margin-right: -2px; }
+  }
+  h2 {
+    @include neon-text($sg-neon-pink);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    line-height: ($sg-baseline * 2);
+    .word1 {
+      .char5 { margin-right: -1px; }
+    }
+    .word2 {
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      line-height: 10px;
+      &:before { @include neon-bar($sg-neon-pink); @include rotate(-22.5deg); left: -5px; top: -8px; }
+      &:after { @include neon-bar($sg-neon-pink); @include rotate(-22.5deg); bottom: -8px; left: -5px; }
+      .char1 { position: relative; top: 4px; margin-right: -3px;}
+      .char2 { position: relative; top: -4px; }
+    }
+    .word3 { margin-left: -1px; }
+  }
+}
+
+#panel {
+  color: $sg-black;
+  font-family: "proxima-nova-extra-condensed-1", "proxima-nova-extra-condensed-2", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 0.25em;
+  line-height: $sg-baseline * 2;
+  text-align: center;
+  p .line1, p .line2 { display: block; }
+  //p:first-of-type .char3 { @include rotate(157.5deg); display:inline-block; top: 15px; left:-12px; position: relative;}
+}
+
+h3 {
+  @include neon-text($sg-neon-yellow);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: ($sg-baseline * 2);
+  margin-bottom: $sg-baseline*2;
+}
+
+
+#details {
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.125em;
+    line-height: 40px;
+    margin-bottom: 2px;
+    margin-top: -2px; 
+  }
+  // #intro strong .char9 { 
+  //   font-family: "coquette-1", "coquette-2", fantasy;
+  //   font-weight: 700;
+  // }
+}
+
+footer {
+  -webkit-font-smoothing: antialiased;
+  color: rgba(0,0,0,0.9);
+  a {
+    &:link, &:visited { color: rgba(0,0,0,0.9); border-color: rgba(0,0,0,0.9); }
+  }
+  strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.125em;
+    line-height: 20px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+  }
+}
+
+h4 {
+  @include neon-text($sg-neon-green);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: $sg-baseline * 2;
+  margin-bottom: $sg-baseline;
+}

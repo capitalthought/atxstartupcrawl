@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<!-- ===================================== -->
+<!--                                       -->
+<!--            Capital Thought            -->
+<!--                                       -->
+<!--     MM                         MM     -->
+<!--    MMMMMMMM       M       MMMMMMMM    -->
+<!--   MMMMMMMMMMMMM  MMM  MMMMMMMMMMMMM   -->
+<!--  MMMMMMMMMMMMMMM M M MMMMMMMMMMMMMMM  -->
+<!--          MMMMMMMM   MMMMMMMM          -->
+<!--               MMMMMMMMM               -->
+<!--                 MMMMM                 -->
+<!--                                       -->
+<!--         Adam Michela  (@soopa)        -->
+<!--                                       -->
+<!-- ===================================== -->
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 ie"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 ie"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><![endif]--> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hot Tech Cold Beer &ndash; Austin Startup Crawl &ndash; SXSW 2011</title>
+  
+  <script src="javascripts/modernizr.min.js"></script>
+
+  <script src="http://use.typekit.com/zkb6isj.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="master.css">
+    
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <script src="javascripts/jquery.lettering.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("h1").lettering('words');
+      $("h1 span").lettering('letters');
+      $("#sign p").lettering('words');
+      $("#sign p span").lettering('letters');
+      $("h2").lettering('words');
+      $("h2 span").lettering('letters');
+      $("h3").lettering('words');
+      $("h3 span").lettering('letters');
+      $("nav a").lettering('letters');
+      $("#details strong").lettering('letters');
+      $("#rsvp a").lettering('letters');
+    });
+  </script>
+  
+  <% if ENV['RACK_ENV'] == 'production' -%>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21548482-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <% end -%>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Startup Crawl</h1>
+      <div id="sign">
+        <div id="panel">
+          <p>SXSW 2011&nbsp;&nbsp;Mar 10&nbsp;&nbsp;4&ndash;10PM</p>
+          <p>Presented by Capital Factory</p>
+          <span class="shim"></span>
+        </div>
+        <span class="shim"></span>
+      </div>
+      <h2>Welcome to Austin</h2>
+    </div>
+  </header>
+  
+  <section id="wall">
+    <%= yield %>
+  </section>
+  
+  <footer>
+    <p>
+      <strong>Austin Startup or Brewery?</strong>
+      Email <a href="mailto:johnrodriguez@otherinbox.com">johnrodriguez@otherinbox.com</a> or call 512-748-6175
+    </p>
+  </footer>
+</body>
+</html>

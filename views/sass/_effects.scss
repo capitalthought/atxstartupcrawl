@@ -1,0 +1,58 @@
+// ANIMATIONS
+
+@mixin neon-flicker($name) {
+  -webkit-animation-name: #{$name}-flicker;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: none;
+}
+
+@mixin turn-off {
+  text-shadow: none;
+}
+@mixin turn-on($color) {
+  text-shadow: $color 0 0 20px;
+}
+
+@mixin neon-flicker-keyframes($color) {
+  1%, 7% { @include turn-off; }
+  4%, 10% { @include turn-on($color); }
+}
+
+@-webkit-keyframes blue-flicker {
+  @include neon-flicker-keyframes($sg-neon-blue);
+}
+@-webkit-keyframes pink-flicker {
+  @include neon-flicker-keyframes($sg-neon-pink);
+}
+@-webkit-keyframes green-flicker {
+  @include neon-flicker-keyframes($sg-neon-green);
+}
+@-webkit-keyframes yellow-flicker {
+  @include neon-flicker-keyframes($sg-neon-yellow);
+}
+
+h1 .word1 .char5 {
+  @include neon-flicker('blue');
+}
+// h2 .word3 .char1 {
+//   @include neon-flicker('pink');
+// }
+
+// #rsvp li:first-child a .char3 {
+//   @include neon-flicker('blue');
+// }
+
+// LETTERING
+
+#sign {
+  .char1 { @include rotate( 1deg); display: inline-block; margin-right: -1px; }
+  .char2 { @include rotate(-1deg); display: inline-block; margin-right: -2px; }
+  .char3 { @include rotate( 2deg); display: inline-block; margin-right:  1px; }
+  .char4 { @include rotate(-1deg); display: inline-block; margin-right: -2px; }
+  .char5 { @include rotate(-2deg); display: inline-block; margin-right:  2px; }
+  .char7 { @include rotate(-2deg); display: inline-block; margin-right: -1px; }
+  .char8 { @include rotate( 1deg); display: inline-block; margin-right: -2px; }
+  .char9 { @include rotate(-2deg); display: inline-block; margin-right:  2px; }
+}
