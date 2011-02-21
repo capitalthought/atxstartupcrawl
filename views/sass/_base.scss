@@ -12,6 +12,7 @@ a {
 
 header {
   @include outer-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
+  background: $sg-twilight;
   background: $sg-twilight url('/images/noise.png') repeat top left;
   &:after {
     background: darken($sg-brick, 5%) url('/images/noise.png') repeat top left;
@@ -28,7 +29,6 @@ header {
     width: 100%;
   }
   > div {
-    background-color: #f5eeeb;
     background: -moz-radial-gradient(50% 50%, farthest-side, transparentize($sg-twilight-overlay,0.7), transparentize($sg-twilight-overlay,0.7), transparent);
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(transparentize($sg-twilight-overlay,0.7)), color-stop(0.5, transparentize($sg-twilight-overlay,0.7)), to(transparent));
     margin: 0 auto;
@@ -175,6 +175,11 @@ header {
     position: relative;
     width: 580px;
     z-index: 1;
+  }
+}
+.ie #details {
+  &:after {
+    display: none;
   }
 }
 

@@ -9,6 +9,7 @@
 ::selection { @include selection; }
 
 body {
+  color: $sg-white;
   color: rgba(255, 255, 255, 0.9);
   font: 600 14px "myriad-pro-condensed-1", "myriad-pro-condensed-2", Helvetica, Arial, sans-serif;
   letter-spacing: 0.125em;
@@ -55,6 +56,22 @@ header {
   }
 }
 
+.ie header {
+  h2 {
+    .word2 {
+      font-size: inherit;
+      display: inline;
+      position: static;
+      line-height: 20px;
+      &:before { display: none; }
+      &:after { display: none; }
+      .char1 { position: static ;}
+      .char2 { position: static ; }
+    }
+  }
+}
+
+
 #panel {
   color: $sg-black;
   font-family: "proxima-nova-extra-condensed-1", "proxima-nova-extra-condensed-2", Helvetica, Arial, sans-serif;
@@ -96,9 +113,10 @@ h3 {
 
 footer {
   -webkit-font-smoothing: antialiased;
+  color: #000;
   color: rgba(0,0,0,0.9);
   a {
-    &:link, &:visited { color: rgba(0,0,0,0.9); border-color: rgba(0,0,0,0.9); }
+    &:link, &:visited { color: #000; color: rgba(0,0,0,0.9); border-color: #000; border-color: rgba(0,0,0,0.9); }
   }
   strong {
     display: block;
