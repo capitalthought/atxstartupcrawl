@@ -115,6 +115,8 @@ h3 {
   // }
 }
 
+.ie7 #details { color: #fff; }
+
 footer {
   -webkit-font-smoothing: antialiased;
   color: #000;
@@ -132,6 +134,12 @@ footer {
     margin-bottom: 2px;
   }
 }
+
+.ie7 footer {
+  a {
+    &:link, &:visited { color: #000; }
+  }
+} 
 
 h4 {
   @include neon-text($sg-neon-green);
