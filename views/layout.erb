@@ -45,8 +45,10 @@
     $(document).ready(function() {
       $("h1").lettering('words');
       $("h1 span").lettering('letters');
-      $("#sign p").lettering('words');
-      $("#sign p span").lettering('letters');
+      $("#sign p:first-child").lettering('words');
+      $("#sign p:first-child span").lettering('letters');
+      $("#sign p a").lettering('words');
+      $("#sign p a span").lettering('letters');
       $("h2").lettering('words');
       $("h2 span").lettering('letters');
       $("h3").lettering('words');
@@ -80,7 +82,7 @@
       <div id="sign">
         <div id="panel">
           <p>SXSW 2011&nbsp;&nbsp;Mar 10&nbsp;&nbsp;4&ndash;10PM</p>
-          <p>Presented by Capital Factory</p>
+          <p><a href="http://capitalfactory.com">Presented by Capital Factory&rarr;</a></p>
           <span class="shim"></span>
         </div>
         <span class="shim"></span>

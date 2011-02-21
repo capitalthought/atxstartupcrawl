@@ -82,6 +82,10 @@ header {
   text-align: center;
   p .line1, p .line2 { display: block; }
   //p:first-of-type .char3 { @include rotate(157.5deg); display:inline-block; top: 15px; left:-12px; position: relative;}
+  a {
+    &:link, &:visited { color: $sg-black; text-decoration: none; }
+    &:active, &:hover { text-decoration: none;  }
+  }
 }
 
 h3 {
