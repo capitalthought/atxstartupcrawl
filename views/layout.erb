@@ -27,14 +27,11 @@
   <!--         Adam Michela  (@soopa)        -->
   <!--                                       -->
   <!-- ===================================== -->
-  
-  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-  <script type="text/javascript">var WRInitTime=(new Date()).getTime();</script>
-  
+    
   <title>Hot Tech Cold Beer &ndash; Austin Startup Crawl &ndash; SXSW 2011</title>
   
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
   <script src="javascripts/modernizr.min.js"></script>
-
   <script src="http://use.typekit.com/zkb6isj.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
@@ -68,16 +65,12 @@
     _gaq.push(['_setDomainName', 'none']);
     _gaq.push(['_setAllowLinker', true]);
     _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
   </script>
   <% end %>
 </head>
 
 <body>
+  
   <header>
     <div>
       <h1>Startup Crawl</h1>
@@ -105,15 +98,7 @@
   </footer>
   
 <% if ENV['RACK_ENV'] == 'production' %>
-  <div id="ClickTaleDiv" style="display: none;"></div>
-  <script type="text/javascript">
-  if(document.location.protocol!='https:')
-    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb6.js'%20type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  if(typeof ClickTale=='function') ClickTale(8161,0.01,"www07");
-  </script>
-<% if ENV['CHARTBEAT_DOMAIN'] %>
+  <script type="text/javascript">document.write(unescape('%3Cscript type="text/javascript" src="'+document.location.protocol+'//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/4313.js"%3E%3C%2Fscript%3E'))</script>
   <script type="text/javascript">
     var _sf_async_config={uid:20344,domain:"<%= ENV['CHARTBEAT_DOMAIN'] %>"};
     (function(){
@@ -132,7 +117,18 @@
          loadChartbeat : function() { oldonload(); loadChartbeat(); };
     })();
   </script>
-<% end %>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21548482-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 <% end %>
 </body>
 </html>
