@@ -187,12 +187,13 @@ p#faq {
     width: 580px;
 }
 footer {
+  color: #000;
   margin: $sg-baseline 0;
   padding: $sg-baseline 0;
   position: relative;
   a {
-    &:link, &:visited { text-decoration: none; border-bottom: 1px solid #fff; }
-    &:active, &:hover { text-decoration: none; border-bottom: 2px solid #fff; }
+    &:link, &:visited { text-decoration: none; border-bottom: 1px solid #000; color: #000; }
+    &:active, &:hover { text-decoration: none; border-bottom: 2px solid #000; color: #000; }
   }
   p {
     margin: $sg-baseline auto;
